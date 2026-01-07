@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gautam Dodiya - SEO Executive Portfolio</title>
+    <meta name="description" content="Professional SEO portfolio showcasing expertise in on-page, off-page, and technical SEO">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Light Mode */
+        body.light-mode {
+            background: linear-gradient(135deg, #f8fafc 0%, #ffffff 50%, #eff6ff 100%);
+            color: #1e293b;
+        }
+
+        /* Dark Mode */
+        body.dark-mode {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+            color: #e2e8f0;
+        }
+
+        /* Dark Mode Toggle */
+        .dark-toggle {
+            position: fixed;
+            top: 24px;
+            right: 24px;
+            z-index: 1000;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+
+        .dark-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        .light-mode .dark-toggle {
+            background: white;
+            border: 1px solid #e2e8f0;
+        }
+
+        .dark-mode .dark-toggle {
+            background: #334155;
+        }
+
+        /* Main Container */
+        .container {
+            display: grid;
+            grid-template-columns: 1fr;
+            min-height: 100vh;
+        }
+
+        @media (min-width: 1024px) {
+            .container {
+                grid-template-columns: 340px 1fr;
+            }
+        }
+
+        /* Sidebar */
+        .sidebar {
+            padding: 32px;
+            border-right: 1px solid;
+            backdrop-filter: blur(8px);
+            transition: all 0.3s;
+        }
+
+        .light-mode .sidebar {
+            background: rgba(255, 255, 255, 0.8);
+            border-color: #e2e8f0;
+        }
+
+        .dark-mode .sidebar {
+            background: rgba(30, 41, 59, 0.8);
+            border-color: #334155;
+        }
+
+        @media (min-width: 1024px) {
+            .sidebar {
+                position: sticky;
+                top: 0;
+                height: 100vh;
+                overflow-y: auto;
+            }
+        }
+
+        .sidebar-content {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            margin-bottom: 8px;
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .contact-item:hover {
+            color: #3b82f6;
+        }
+
+        .section-title {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .light-mode .section-title {
+            color: #64748b;
+        }
+
+        .dark-mode .section-title {
+            color: #94a3b8;
+        }
+
+        .education-item {
+            padding-left: 16px;
+            border-left: 2px solid;
+            margin-bottom: 12px;
+        }
+
+        .education-item:first-child {
+            border-color: #3b82f6;
+        }
+
+        .education-item:last-child {
+            border-color: #6366f1;
+        }
+
+        .cert-item {
+            display: flex;
+            align-items: start;
+            gap: 8px;
+            margin-bottom: 8px;
+            font-size: 12px;
+        }
+
+        .cert-item::before {
+            content: '✓';
+            color: #3b82f6;
+            margin-top: 2px;
+        }
+
+        .download-btn {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 12px 16px;
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .dark-mode .download-btn {
+            background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 24px;
+        }
+
+        @media (min-width: 1024px) {
+            .main-content {
+                padding: 48px 64px;
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            max-width: 1200px;
+            margin-bottom: 64px;
+        }
+
+        .hero-layout {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+            align-items: start;
+            margin-bottom: 32px;
+        }
+
+        @media (min-width: 768px) {
+            .hero-layout {
+                flex-direction: row;
+                align-items: center;
+            }
+        }
+
+        .avatar {
+            width: 128px;
+            height: 128px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 48px;
+            font-weight: bold;
+            flex-shrink: 0;
+            box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 8px 16px;
+            border-radius: 9999px;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 16px;
+        }
+
+        .light-mode .status-badge {
+            background: #dcfce7;
+            color: #15803d;
+        }
+
+        .dark-mode .status-badge {
+            background: rgba(22, 101, 52, 0.5);
+            color: #86efac;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 16px;
+        }
+
+        .hero h2 {
+            font-size: 24px;
+            font-weight: 600;
+            background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 16px;
+        }
+
+        .hero-description {
+            font-size: 16px;
+            line-height: 1.7;
+            max-width: 42rem;
+        }
+
+        .light-mode .hero-description {
+            color: #64748b;
+        }
+
+        .dark-mode .hero-description {
+            color: #cbd5e1;
+        }
+
+        /* Social Links */
+        .social-links {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+
+        .social-label {
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .light-mode .social-label {
+            color: #64748b;
+        }
+
+        .dark-mode .social-label {
+            color: #94a3b8;
+        }
+
+        .social-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .light-mode .social-btn {
+            background: white;
+            border: 1px solid #e2e8f0;
+            color: #334155;
+        }
+
+        .light-mode .social-btn:hover {
+            border-color: #93c5fd;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .dark-mode .social-btn {
+            background: #334155;
+            color: #e2e8f0;
+        }
+
+        .dark-mode .social-btn:hover {
+            background: #475569;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        /* CTA Buttons */
+        .cta-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .btn-primary {
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-secondary {
+            padding: 12px 24px;
+            border: 2px solid;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .light-mode .btn-secondary {
+            border-color: #cbd5e1;
+            color: #334155;
+        }
+
+        .light-mode .btn-secondary:hover {
+            border-color: #94a3b8;
+        }
+
+        .dark-mode .btn-secondary {
+            border-color: #475569;
+            color: #e2e8f0;
+        }
+
+        .dark-mode .btn-secondary:hover {
+            border-color: #64748b;
+        }
+
+        /* Experience Section */
+        .experience-section {
+            margin-bottom: 64px;
+            padding: 32px;
+            border-radius: 16px;
+            border: 1px solid;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+        }
+
+        .light-mode .experience-section {
+            background: white;
+            border-color: #e2e8f0;
+        }
+
+        .dark-mode .experience-section {
+            background: rgba(30, 41, 59, 0.5);
+            border-color: #334155;
+        }
+
+        .experience-item {
+            display: flex;
+            align-items: start;
+            gap: 16px;
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 16px;
+            transition: background 0.2s;
+        }
+
+        .light-mode .experience-item:hover {
+            background: #f8fafc;
+        }
+
+        .dark-mode .experience-item:hover {
+            background: rgba(51, 65, 85, 0.5);
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin-top: 8px;
+            flex-shrink: 0;
+        }
+
+        .status-dot.active {
+            background: #10b981;
+        }
+
+        .light-mode .status-dot.inactive {
+            background: #cbd5e1;
+        }
+
+        .dark-mode .status-dot.inactive {
+            background: #475569;
+        }
+
+        /* Skills Grid */
+        .skills-section {
+            margin-bottom: 64px;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 42rem;
+            margin: 0 auto 48px;
+        }
+
+        .section-header h2 {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 16px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+        }
+
+        @media (min-width: 768px) {
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .skills-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .skill-card {
+            position: relative;
+            padding: 24px;
+            border-radius: 12px;
+            border: 1px solid;
+            transition: all 0.3s;
+            overflow: hidden;
+        }
+
+        .light-mode .skill-card {
+            background: white;
+            border-color: #e2e8f0;
+        }
+
+        .light-mode .skill-card:hover {
+            border-color: #93c5fd;
+            box-shadow: 0 20px 25px rgba(0, 0, 0, 0.1);
+            transform: translateY(-4px);
+        }
+
+        .dark-mode .skill-card {
+            background: rgba(30, 41, 59, 0.5);
+            border-color: #334155;
+        }
+
+        .dark-mode .skill-card:hover {
+            border-color: #3b82f6;
+            box-shadow: 0 20px 25px rgba(59, 130, 246, 0.2);
+            transform: translateY(-4px);
+        }
+
+        .skill-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 12px;
+        }
+
+        .skill-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            transition: transform 0.3s;
+        }
+
+        .skill-card:hover .skill-icon {
+            transform: scale(1.1);
+        }
+
+        .light-mode .skill-icon {
+            background: linear-gradient(135deg, #dbeafe 0%, #e0e7ff 100%);
+        }
+
+        .dark-mode .skill-icon {
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.5) 0%, rgba(49, 46, 129, 0.5) 100%);
+        }
+
+        .skill-level {
+            padding: 4px 8px;
+            border-radius: 9999px;
+            font-size: 12px;
+        }
+
+        .light-mode .skill-level {
+            background: #f1f5f9;
+            color: #475569;
+        }
+
+        .dark-mode .skill-level {
+            background: #334155;
+            color: #94a3b8;
+        }
+
+        .skill-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            transition: color 0.3s;
+        }
+
+        .skill-card:hover .skill-title {
+            color: #3b82f6;
+        }
+
+        .skill-description {
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .light-mode .skill-description {
+            color: #64748b;
+        }
+
+        .dark-mode .skill-description {
+            color: #94a3b8;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill-tag {
+            padding: 4px 8px;
+            border-radius: 9999px;
+            font-size: 12px;
+        }
+
+        .light-mode .skill-tag {
+            background: #f1f5f9;
+            color: #475569;
+        }
+
+        .dark-mode .skill-tag {
+            background: rgba(51, 65, 85, 0.5);
+            color: #cbd5e1;
+        }
+
+        /* Footer CTA */
+        .footer-cta {
+            margin-top: 80px;
+            text-align: center;
+            padding: 48px;
+            border-radius: 16px;
+            box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .light-mode .footer-cta,
+        .dark-mode .footer-cta {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+        }
+
+        .footer-cta h3 {
+            font-size: 36px;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 16px;
+        }
+
+        .footer-cta p {
+            color: #cbd5e1;
+            margin-bottom: 32px;
+            max-width: 42rem;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .footer-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 16px;
+        }
+
+        .footer-btn-primary {
+            padding: 16px 32px;
+            background: white;
+            color: #1e293b;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .footer-btn-primary:hover {
+            box-shadow: 0 20px 25px rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .footer-btn-secondary {
+            padding: 16px 32px;
+            border: 2px solid white;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .footer-btn-secondary:hover {
+            background: white;
+            color: #1e293b;
+        }
+    </style>
+</head>
+<body class="light-mode">
+    <!-- Dark Mode Toggle -->
+    <button class="dark-toggle" onclick="toggleDarkMode()" aria-label="Toggle dark mode">
+        <span id="darkModeIcon">🌙</span>
+    </button>
+
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-content">
+                <!-- Contact Info -->
+                <div>
+                    <div class="contact-item">
+                        <span>📍</span>
+                        <span>Surat, India</span>
+                    </div>
+                    <a class="contact-item" href="mailto:gautamdodiya1718@gmail.com">
+                        <span>✉️</span>
+                        <span>gautamdodiya1718@gmail.com</span>
+                    </a>
+                    <div class="contact-item">
+                        <span>📱</span>
+                        <span>+91 87587 86043</span>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <section>
+                    <h3 class="section-title">Education</h3>
+                    <div class="education-item">
+                        <p style="font-size: 14px; font-weight: 500; margin-bottom: 4px;">MBA</p>
+                        <p style="font-size: 12px; opacity: 0.7;">LJ University, Ahmedabad</p>
+                    </div>
+                    <div class="education-item">
+                        <p style="font-size: 14px; font-weight: 500; margin-bottom: 4px;">BBA</p>
+                        <p style="font-size: 12px; opacity: 0.7;">VNSGU, Surat</p>
+                    </div>
+                </section>
+
+                <!-- Certifications -->
+                <section>
+                    <h3 class="section-title">Certifications</h3>
+                    <div class="cert-item">Google SEO (UC Davis)</div>
+                    <div class="cert-item">Google Digital Marketing</div>
+                    <div class="cert-item">Meta Social Media Marketing</div>
+                    <div class="cert-item">Generative AI Mastermind</div>
+                </section>
+
+                <!-- Download Button -->
+                <a href="Gautam-Dodiya-Resume.pdf" class="download-btn" download>
+                    📄 Download Resume
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <section class="main-content">
+            <!-- Hero Section -->
+            <header class="hero">
+                <div class="hero-layout">
+                    <!-- Avatar -->
+                    <div class="avatar">
+                    <img src="mepassport.png" alt="Gautam Dodiya" style="width: 128px; height: 128px; border-radius: 50%; object-fit: cover; box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15);">
+                    </div>
+                    <!-- Hero Text -->
+                    <div class="hero-text">
+                        <h1>Gautam Dodiya</h1>
+                        <h2>SEO Executive</h2>
+                        <p class="hero-description">
+                            Ranked TestDino homepage for "Playwright Analytics" in 4 months. Ranked 27 landing pages and 15+ blogs for high-intent keywords. Built ~640 backlinks.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Social Links -->
+                <div class="social-links">
+                    <span class="social-label">Connect:</span>
+                    <a href="https://linkedin.com/in/gautam-dodiya" target="_blank" class="social-btn">
+                        <span>🔗</span>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="mailto:gautamdodiya1718@gmail.com" class="social-btn">
+                        <span>✉️</span>
+                        <span>Email</span>
+                    </a>
+                    <a href="tel:+918758786043" class="social-btn">
+                        <span>📱</span>
+                        <span>Phone</span>
+                    </a>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div class="cta-buttons">
+                    <a href="#skills" class="btn-primary">View Skills →</a>
+                    <a href="Gautam-Dodiya-Resume.pdf" class="btn-secondary" download>Download Resume</a>
+                </div>
+            </header>
+
+            <!-- Experience Section -->
+            <section class="experience-section">
+                <h3 class="section-title">Experience</h3>
+                <div class="experience-item">
+                    <div class="status-dot active"></div>
+                    <div>
+                        <p style="font-weight: 600; margin-bottom: 4px;">Alphabin — TestDino</p>
+                        <p style="font-size: 14px; margin-bottom: 4px; opacity: 0.8;">SEO Executive</p>
+                        <p style="font-size: 12px; opacity: 0.6;">Jul 2025 – Present</p>
+                    </div>
+                </div>
+                <div class="experience-item">
+                    <div class="status-dot inactive"></div>
+                    <div>
+                        <p style="font-weight: 600; margin-bottom: 4px;">Happequity</p>
+                        <p style="font-size: 14px; margin-bottom: 4px; opacity: 0.8;">Digital Marketing Intern</p>
+                        <p style="font-size: 12px; opacity: 0.6;">May–Jul 2024</p>
+                    </div>
+                </div>
+                <div class="experience-item">
+                    <div class="status-dot inactive"></div>
+                    <div>
+                        <p style="font-weight: 600; margin-bottom: 4px;">Pantaloons (ABFRL)</p>
+                        <p style="font-size: 14px; margin-bottom: 4px; opacity: 0.8;">Retail Marketing Intern</p>
+                        <p style="font-size: 12px; opacity: 0.6;">Sep–Nov 2023</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section id="skills" class="skills-section">
+                <div class="section-header">
+                    <h2>Core Skills</h2>
+                    <p style="opacity: 0.7;">Professional SEO expertise across multiple domains</p>
+                </div>
+
+                <div class="skills-grid">
+                    <!-- Skill 1 -->
+                    <a href="skill.html#on-page-seo" class="skill-card" style="text-decoration: none; color: inherit; cursor: pointer;">
+                        <div class="skill-header">
+                            <div class="skill-icon">📝</div>
+                            <div class="skill-level">Expert</div>
+                        </div>
+                        <h3 class="skill-title">On-Page SEO</h3>
+                        <p class="skill-description">Content optimization, meta tags, internal linking, and keyword placement strategies</p>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Content</span>
+                            <span class="skill-tag">Meta Tags</span>
+                            <span class="skill-tag">Keywords</span>
+                        </div>
+                    </a>
+
+                    <!-- Skill 2 -->
+                    <a href="skill.html#off-page-seo" class="skill-card" style="text-decoration: none; color: inherit; cursor: pointer;">
+                        <div class="skill-header">
+                            <div class="skill-icon">🔗</div>
+                            <div class="skill-level">Expert</div>
+                        </div>
+                        <h3 class="skill-title">Off-Page SEO</h3>
+                        <p class="skill-description">Link building, digital PR, guest posting, and brand mentions across the web</p>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Backlinks</span>
+                            <span class="skill-tag">Outreach</span>
+                            <span class="skill-tag">PR</span>
+                        </div>
+                    </a>
+
+                    <!-- Skill 3 -->
+                    <a href="skill.html#technical-seo" class="skill-card" style="text-decoration: none; color: inherit; cursor: pointer;">
+                        <div class="skill-header">
+                            <div class="skill-icon">⚙️</div>
+                            <div class="skill-level">Advanced</div>
+                        </div>
+                        <h3 class="skill-title">Technical SEO</h3>
+                        <p class="skill-description">Site architecture, crawling, indexing, Core Web Vitals, and structured data</p>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Crawling</span>
+                            <span class="skill-tag">Speed</span>
+                            <span class="skill-tag">Schema</span>
+                        </div>
+                    </a>
+
+                    <!-- Skill 4 -->
+                    <a href="skill.html#keyword-research" class="skill-card" style="text-decoration: none; color: inherit; cursor: pointer;">
+                        <div class="skill-header">
+                            <div class="skill-icon">🔍</div>
+                            <div class="skill-level">Expert</div>
+                        </div>
+                        <h3 class="skill-title">Keyword Research</h3>
+                        <p class="skill-description">Search intent analysis, keyword mapping, and competitive gap analysis</p>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Intent</span>
+                            <span class="skill-tag">Mapping</span>
+                            <span class="skill-tag">Analysis</span>
+                        </div>
+                    </a>
+
+                    <!-- Skill 5 -->
+                    <a href="skill.html#content-strategy" class="skill-card" style="text-decoration: none; color: inherit; cursor: pointer;">
+                        <div class="skill-header">
+                            <div class="skill-icon">📊</div>
+                            <div class="skill-level">Advanced</div>
+                        </div>
+                        <h3 class="skill-title">Content Strategy</h3>
+                        <p class="skill-description">TOFU, MOFU, BOFU content planning aligned with user journey</p>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Planning</span>
+                            <span class="skill-tag">Funnel</span>
+                            <span class="skill-tag">Journey</span>
+                        </div>
+                    </a>
+
+                    <!-- Skill 6 -->
+                    <a href="skill.html#ai-seo" class="skill-card" style="text-decoration: none; color: inherit; cursor: pointer;">
+                        <div class="skill-header">
+                            <div class="skill-icon">🤖</div>
+                            <div class="skill-level">Intermediate</div>
+                        </div>
+                        <h3 class="skill-title">AI SEO / AEO</h3>
+                        <p class="skill-description">Optimizing for AI Overviews, featured snippets, and answer engines</p>
+                        <div class="skill-tags">
+                            <span class="skill-tag">AI</span>
+                            <span class="skill-tag">Snippets</span>
+                            <span class="skill-tag">SGE</span>
+                        </div>
+                    </a>
+
+                    <!-- Skill 7 -->
+                    <a href="skill.html#analytics" class="skill-card" style="text-decoration: none; color: inherit; cursor: pointer;">
+                        <div class="skill-header">
+                            <div class="skill-icon">📈</div>
+                            <div class="skill-level">Advanced</div>
+                        </div>
+                        <h3 class="skill-title">Analytics & Reporting</h3>
+                        <p class="skill-description">Google Analytics, Search Console, data visualization, and performance tracking</p>
+                        <div class="skill-tags">
+                            <span class="skill-tag">GA4</span>
+                            <span class="skill-tag">GSC</span>
+                            <span class="skill-tag">Reports</span>
+                        </div>
+                    </a>
+
+                    <!-- Skill 8 -->
+                    <a href="skill.html#local-seo" class="skill-card" style="text-decoration: none; color: inherit; cursor: pointer;">
+                        <div class="skill-header">
+                            <div class="skill-icon">📍</div>
+                            <div class="skill-level">Intermediate</div>
+                        </div>
+                        <h3 class="skill-title">Local SEO</h3>
+                        <p class="skill-description">Google Business Profile, local citations, and location-based optimization</p>
+                        <div class="skill-tags">
+                            <span class="skill-tag">GBP</span>
+                            <span class="skill-tag">Citations</span>
+                            <span class="skill-tag">Local</span>
+                        </div>
+                    </a>
+
+                    <!-- Skill 9 -->
+                    <a href="skill.html#seo-tools" class="skill-card" style="text-decoration: none; color: inherit; cursor: pointer;">
+                        <div class="skill-header">
+                            <div class="skill-icon">🛠️</div>
+                            <div class="skill-level">Expert</div>
+                        </div>
+                        <h3 class="skill-title">SEO Tools</h3>
+                        <p class="skill-description">SEMrush, Ahrefs, Screaming Frog, and WordPress optimization</p>
+                        <div class="skill-tags">
+                            <span class="skill-tag">SEMrush</span>
+                            <span class="skill-tag">WordPress</span>
+                            <span class="skill-tag">Tools</span>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Footer CTA -->
+            <section class="footer-cta">
+                <h3>Let's Work Together</h3>
+                <p>Looking for an SEO expert to grow your organic traffic? Let's discuss how I can help achieve your goals.</p>
+                <div class="footer-buttons">
+                    <a href="mailto:gautamdodiya1718@gmail.com" class="footer-btn-primary">Get In Touch</a>
+                    <a href="https://linkedin.com/in/gautam-dodiya" target="_blank" class="footer-btn-secondary">Connect on LinkedIn</a>
+                </div>
+            </section>
+        </section>
+    </div>
+
+    <script>
+        // Dark Mode Toggle
+        function toggleDarkMode() {
+            const body = document.body;
+            const icon = document.getElementById('darkModeIcon');
+            
+            if (body.classList.contains('light-mode')) {
+                body.classList.remove('light-mode');
+                body.classList.add('dark-mode');
+                icon.textContent = '☀️';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                body.classList.remove('dark-mode');
+                body.classList.add('light-mode');
+                icon.textContent = '🌙';
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        // Load saved theme preference
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedTheme = localStorage.getItem('theme');
+            const icon = document.getElementById('darkModeIcon');
+            
+            if (savedTheme === 'dark') {
+                document.body.classList.remove('light-mode');
+                document.body.classList.add('dark-mode');
+                icon.textContent = '☀️';
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
