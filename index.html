@@ -20,14 +20,14 @@
 
         /* Light Mode */
         body.light-mode {
-            background: linear-gradient(135deg, #f8fafc 0%, #ffffff 50%, #eff6ff 100%);
-            color: #1e293b;
+            background: #FAFAF8;
+            color: #1F2933;
         }
 
         /* Dark Mode */
         body.dark-mode {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
-            color: #e2e8f0;
+            background: #181715;
+            color: #F2F2EF;
         }
 
         /* Dark Mode Toggle */
@@ -36,11 +36,11 @@
             top: 24px;
             right: 24px;
             z-index: 1000;
-            width: 56px;
-            height: 56px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             border: none;
-            font-size: 24px;
+            font-size: 18px;
             cursor: pointer;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             transition: all 0.3s;
@@ -51,51 +51,45 @@
         }
 
         .light-mode .dark-toggle {
-            background: white;
-            border: 1px solid #e2e8f0;
+            background: #FFFFFF;
+            border: 1px solid #EDEAE5;
         }
 
         .dark-mode .dark-toggle {
-            background: #334155;
+            background: #1F1E1B;
+            border: 1px solid #2C2A26;
         }
 
         /* Main Container */
         .container {
-            display: grid;
-            grid-template-columns: 1fr;
-            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            min-height: auto;
         }
 
         @media (min-width: 1024px) {
             .container {
-                grid-template-columns: 340px 1fr;
+                display: grid;
+                grid-template-columns: 1fr 300px;
+                gap: 32px;
+                align-items: start;
             }
         }
 
         /* Sidebar */
         .sidebar {
             padding: 32px;
-            border-right: 1px solid;
-            backdrop-filter: blur(8px);
             transition: all 0.3s;
-        }
-
-        .light-mode .sidebar {
-            background: rgba(255, 255, 255, 0.8);
-            border-color: #e2e8f0;
-        }
-
-        .dark-mode .sidebar {
-            background: rgba(30, 41, 59, 0.8);
-            border-color: #334155;
+            order: 3;
         }
 
         @media (min-width: 1024px) {
             .sidebar {
                 position: sticky;
-                top: 0;
-                height: 100vh;
-                overflow-y: auto;
+                top: 24px;
+                height: fit-content;
+                order: 2;
+                padding: 24px;
             }
         }
 
@@ -103,6 +97,22 @@
             display: flex;
             flex-direction: column;
             gap: 32px;
+        }
+
+        @media (min-width: 768px) {
+            .sidebar-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 32px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .sidebar-content {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            }
         }
 
         .contact-item {
@@ -129,11 +139,11 @@
         }
 
         .light-mode .section-title {
-            color: #64748b;
+            color: #6B7280;
         }
 
         .dark-mode .section-title {
-            color: #94a3b8;
+            color: #B6B2AA;
         }
 
         .education-item {
@@ -143,11 +153,11 @@
         }
 
         .education-item:first-child {
-            border-color: #3b82f6;
+            border-color: #A18D6D;
         }
 
         .education-item:last-child {
-            border-color: #6366f1;
+            border-color: #A18D6D;
         }
 
         .cert-item {
@@ -160,7 +170,7 @@
 
         .cert-item::before {
             content: '✓';
-            color: #3b82f6;
+            color: #A18D6D;
             margin-top: 2px;
         }
 
@@ -169,8 +179,8 @@
             width: 100%;
             text-align: center;
             padding: 12px 16px;
-            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
-            color: white;
+            background: #A18D6D;
+            color: #FFFFFF;
             border-radius: 8px;
             text-decoration: none;
             font-size: 14px;
@@ -180,21 +190,19 @@
 
         .download-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .dark-mode .download-btn {
-            background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
+            box-shadow: 0 10px 15px rgba(161, 141, 109, 0.3);
         }
 
         /* Main Content */
         .main-content {
             padding: 24px;
+            order: 1;
         }
 
         @media (min-width: 1024px) {
             .main-content {
-                padding: 48px 64px;
+            padding: 48px 64px;
+            order: 1;
             }
         }
 
@@ -214,8 +222,8 @@
 
         @media (min-width: 768px) {
             .hero-layout {
-                flex-direction: row;
-                align-items: center;
+            flex-direction: row;
+            align-items: center;
             }
         }
 
@@ -248,13 +256,13 @@
         }
 
         .light-mode .status-badge {
-            background: #dcfce7;
-            color: #15803d;
+            background: #F4F1EB;
+            color: #703B3B;
         }
 
         .dark-mode .status-badge {
-            background: rgba(22, 101, 52, 0.5);
-            color: #86efac;
+            background: #262420;
+            color: #B6A98A;
         }
 
         .hero h1 {
@@ -266,10 +274,7 @@
         .hero h2 {
             font-size: 24px;
             font-weight: 600;
-            background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #A18D6D;
             margin-bottom: 16px;
         }
 
@@ -280,11 +285,11 @@
         }
 
         .light-mode .hero-description {
-            color: #64748b;
+            color: #6B7280;
         }
 
         .dark-mode .hero-description {
-            color: #cbd5e1;
+            color: #B6B2AA;
         }
 
         /* Social Links */
@@ -302,11 +307,11 @@
         }
 
         .light-mode .social-label {
-            color: #64748b;
+            color: #6B7280;
         }
 
         .dark-mode .social-label {
-            color: #94a3b8;
+            color: #B6B2AA;
         }
 
         .social-btn {
@@ -322,24 +327,25 @@
         }
 
         .light-mode .social-btn {
-            background: white;
-            border: 1px solid #e2e8f0;
-            color: #334155;
+            background: #FFFFFF;
+            border: 1px solid #EDEAE5;
+            color: #1F2933;
         }
 
         .light-mode .social-btn:hover {
-            border-color: #93c5fd;
+            border-color: #A18D6D;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .dark-mode .social-btn {
-            background: #334155;
-            color: #e2e8f0;
+            background: #1F1E1B;
+            color: #F2F2EF;
+            border: 1px solid #2C2A26;
         }
 
         .dark-mode .social-btn:hover {
-            background: #475569;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            background: #262420;
+            border-color: #B6A98A;
         }
 
         /* CTA Buttons */
@@ -351,7 +357,7 @@
 
         .btn-primary {
             padding: 12px 24px;
-            background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
+            background: #A18D6D;
             color: white;
             border-radius: 8px;
             text-decoration: none;
@@ -361,7 +367,7 @@
 
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 10px 15px rgba(161, 141, 109, 0.3);
         }
 
         .btn-secondary {
@@ -374,21 +380,25 @@
         }
 
         .light-mode .btn-secondary {
-            border-color: #cbd5e1;
-            color: #334155;
+            border-color: #1F2933;
+            color: #1F2933;
+            background: transparent;
         }
 
         .light-mode .btn-secondary:hover {
-            border-color: #94a3b8;
+            background: #1F2933;
+            color: #FFFFFF;
         }
 
         .dark-mode .btn-secondary {
-            border-color: #475569;
-            color: #e2e8f0;
+            border-color: #FFFFFF;
+            color: #FFFFFF;
+            background: transparent;
         }
 
         .dark-mode .btn-secondary:hover {
-            border-color: #64748b;
+            background: #FFFFFF;
+            color: #1F2933;
         }
 
         /* Experience Section */
@@ -402,13 +412,13 @@
         }
 
         .light-mode .experience-section {
-            background: white;
-            border-color: #e2e8f0;
+            background: #FFFFFF;
+            border-color: #EDEAE5;
         }
 
         .dark-mode .experience-section {
-            background: rgba(30, 41, 59, 0.5);
-            border-color: #334155;
+            background: #1F1E1B;
+            border-color: #2C2A26;
         }
 
         .experience-item {
@@ -422,11 +432,11 @@
         }
 
         .light-mode .experience-item:hover {
-            background: #f8fafc;
+            background: #FAFAF8;
         }
 
         .dark-mode .experience-item:hover {
-            background: rgba(51, 65, 85, 0.5);
+            background: #262420;
         }
 
         .status-dot {
@@ -438,15 +448,15 @@
         }
 
         .status-dot.active {
-            background: #10b981;
+            background: #A18D6D;
         }
 
         .light-mode .status-dot.inactive {
-            background: #cbd5e1;
+            background: #EDEAE5;
         }
 
         .dark-mode .status-dot.inactive {
-            background: #475569;
+            background: #2C2A26;
         }
 
         /* Skills Grid */
@@ -494,24 +504,24 @@
         }
 
         .light-mode .skill-card {
-            background: white;
-            border-color: #e2e8f0;
+            background: #FFFFFF;
+            border-color: #EDEAE5;
         }
 
         .light-mode .skill-card:hover {
-            border-color: #93c5fd;
-            box-shadow: 0 20px 25px rgba(0, 0, 0, 0.1);
+            border-color: #A18D6D;
+            box-shadow: 0 10px 15px rgba(161, 141, 109, 0.15);
             transform: translateY(-4px);
         }
 
         .dark-mode .skill-card {
-            background: rgba(30, 41, 59, 0.5);
-            border-color: #334155;
+            background: #1F1E1B;
+            border-color: #2C2A26;
         }
 
         .dark-mode .skill-card:hover {
-            border-color: #3b82f6;
-            box-shadow: 0 20px 25px rgba(59, 130, 246, 0.2);
+            border-color: #B6A98A;
+            box-shadow: 0 10px 15px rgba(182, 169, 138, 0.2);
             transform: translateY(-4px);
         }
 
@@ -538,11 +548,11 @@
         }
 
         .light-mode .skill-icon {
-            background: linear-gradient(135deg, #dbeafe 0%, #e0e7ff 100%);
+            background: #F4F1EB;
         }
 
         .dark-mode .skill-icon {
-            background: linear-gradient(135deg, rgba(30, 58, 138, 0.5) 0%, rgba(49, 46, 129, 0.5) 100%);
+            background: #262420;
         }
 
         .skill-level {
@@ -552,13 +562,13 @@
         }
 
         .light-mode .skill-level {
-            background: #f1f5f9;
-            color: #475569;
+            background: #F4F1EB;
+            color: #703B3B;
         }
 
         .dark-mode .skill-level {
-            background: #334155;
-            color: #94a3b8;
+            background: #262420;
+            color: #B6A98A;
         }
 
         .skill-title {
@@ -569,7 +579,7 @@
         }
 
         .skill-card:hover .skill-title {
-            color: #3b82f6;
+            color: #A18D6D;
         }
 
         .skill-description {
@@ -579,11 +589,11 @@
         }
 
         .light-mode .skill-description {
-            color: #64748b;
+            color: #6B7280;
         }
 
         .dark-mode .skill-description {
-            color: #94a3b8;
+            color: #B6B2AA;
         }
 
         .skill-tags {
@@ -599,27 +609,41 @@
         }
 
         .light-mode .skill-tag {
-            background: #f1f5f9;
-            color: #475569;
+            background: #F4F1EB;
+            color: #703B3B;
         }
 
         .dark-mode .skill-tag {
-            background: rgba(51, 65, 85, 0.5);
-            color: #cbd5e1;
+            background: #262420;
+            color: #B6A98A;
         }
 
         /* Footer CTA */
         .footer-cta {
-            margin-top: 80px;
+            margin-top: 0;
             text-align: center;
-            padding: 48px;
-            border-radius: 16px;
-            box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15);
+            padding: 48px 24px;
+            border-radius: 0;
+            box-shadow: none;
+            border-top: 1px solid;
+            order: 4;
         }
 
-        .light-mode .footer-cta,
+        @media (min-width: 1024px) {
+            .footer-cta {
+                padding: 80px 64px;
+                grid-column: 1 / -1;
+            }
+        }
+
+        .light-mode .footer-cta {
+            background: #1F2933;
+            border-color: #EDEAE5;
+        }
+
         .dark-mode .footer-cta {
-            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            background: #1F1E1B;
+            border-color: #2C2A26;
         }
 
         .footer-cta h3 {
@@ -630,7 +654,7 @@
         }
 
         .footer-cta p {
-            color: #cbd5e1;
+            color: #B6B2AA;
             margin-bottom: 32px;
             max-width: 42rem;
             margin-left: auto;
@@ -646,8 +670,8 @@
 
         .footer-btn-primary {
             padding: 16px 32px;
-            background: white;
-            color: #1e293b;
+            background: #FFFFFF;
+            color: #1F2933;
             border-radius: 8px;
             text-decoration: none;
             font-weight: 500;
@@ -655,7 +679,7 @@
         }
 
         .footer-btn-primary:hover {
-            box-shadow: 0 20px 25px rgba(255, 255, 255, 0.3);
+            box-shadow: 0 10px 15px rgba(255, 255, 255, 0.2);
             transform: translateY(-2px);
         }
 
@@ -671,7 +695,7 @@
 
         .footer-btn-secondary:hover {
             background: white;
-            color: #1e293b;
+            color: #1F2933;
         }
     </style>
 </head>
@@ -682,54 +706,6 @@
     </button>
 
     <div class="container">
-        <!-- Sidebar -->
-        <aside class="sidebar">
-            <div class="sidebar-content">
-                <!-- Contact Info -->
-                <div>
-                    <div class="contact-item">
-                        <span>📍</span>
-                        <span>Surat, India</span>
-                    </div>
-                    <a class="contact-item" href="mailto:gautamdodiya1718@gmail.com">
-                        <span>✉️</span>
-                        <span>gautamdodiya1718@gmail.com</span>
-                    </a>
-                    <div class="contact-item">
-                        <span>📱</span>
-                        <span>+91 87587 86043</span>
-                    </div>
-                </div>
-
-                <!-- Education -->
-                <section>
-                    <h3 class="section-title">Education</h3>
-                    <div class="education-item">
-                        <p style="font-size: 14px; font-weight: 500; margin-bottom: 4px;">MBA</p>
-                        <p style="font-size: 12px; opacity: 0.7;">LJ University, Ahmedabad</p>
-                    </div>
-                    <div class="education-item">
-                        <p style="font-size: 14px; font-weight: 500; margin-bottom: 4px;">BBA</p>
-                        <p style="font-size: 12px; opacity: 0.7;">VNSGU, Surat</p>
-                    </div>
-                </section>
-
-                <!-- Certifications -->
-                <section>
-                    <h3 class="section-title">Certifications</h3>
-                    <div class="cert-item">Google SEO (UC Davis)</div>
-                    <div class="cert-item">Google Digital Marketing</div>
-                    <div class="cert-item">Meta Social Media Marketing</div>
-                    <div class="cert-item">Generative AI Mastermind</div>
-                </section>
-
-                <!-- Download Button -->
-                <a href="Gautam-Dodiya-Resume.pdf" class="download-btn" download>
-                    📄 Download Resume
-                </a>
-            </div>
-        </aside>
-
         <!-- Main Content -->
         <section class="main-content">
             <!-- Hero Section -->
@@ -752,7 +728,7 @@
                 <!-- Social Links -->
                 <div class="social-links">
                     <span class="social-label">Connect:</span>
-                    <a href="https://linkedin.com/in/gautam-dodiya" target="_blank" class="social-btn">
+                    <a href="https://www.linkedin.com/in/gautam-dodiya-b2490a226/" target="_blank" class="social-btn">
                         <span>🔗</span>
                         <span>LinkedIn</span>
                     </a>
@@ -769,7 +745,7 @@
                 <!-- CTA Buttons -->
                 <div class="cta-buttons">
                     <a href="#skills" class="btn-primary">View Skills →</a>
-                    <a href="Gautam-Dodiya-Resume.pdf" class="btn-secondary" download>Download Resume</a>
+                    <a href="Gautam SEO Resume.pdf" class="btn-secondary" download>Download Resume</a>
                 </div>
             </header>
 
@@ -947,16 +923,55 @@
                 </div>
             </section>
 
-            <!-- Footer CTA -->
-            <section class="footer-cta">
-                <h3>Let's Work Together</h3>
-                <p>Looking for an SEO expert to grow your organic traffic? Let's discuss how I can help achieve your goals.</p>
-                <div class="footer-buttons">
-                    <a href="mailto:gautamdodiya1718@gmail.com" class="footer-btn-primary">Get In Touch</a>
-                    <a href="https://linkedin.com/in/gautam-dodiya" target="_blank" class="footer-btn-secondary">Connect on LinkedIn</a>
-                </div>
-            </section>
         </section>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-content">
+                <!-- Contact Info -->
+                <div>
+                    <div class="contact-item">
+                        <span>📍</span>
+                        <span>Surat, India</span>
+                    </div>
+                    <a class="contact-item" href="mailto:gautamdodiya1718@gmail.com">
+                        <span>✉️</span>
+                        <span>gautamdodiya1718@gmail.com</span>
+                    </a>
+                    <div class="contact-item">
+                        <span>📱</span>
+                        <span>+91 87587 86043</span>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <section>
+                    <h3 class="section-title">Education</h3>
+                    <div class="education-item">
+                        <p style="font-size: 14px; font-weight: 500; margin-bottom: 4px;">MBA</p>
+                        <p style="font-size: 12px; opacity: 0.7;">LJ University, Ahmedabad</p>
+                    </div>
+                    <div class="education-item">
+                        <p style="font-size: 14px; font-weight: 500; margin-bottom: 4px;">BBA</p>
+                        <p style="font-size: 12px; opacity: 0.7;">VNSGU, Surat</p>
+                    </div>
+                </section>
+
+                <!-- Certifications -->
+                <section>
+                    <h3 class="section-title">Certifications</h3>
+                    <div class="cert-item">Google SEO (UC Davis)</div>
+                    <div class="cert-item">Google Digital Marketing</div>
+                    <div class="cert-item">Meta Social Media Marketing</div>
+                    <div class="cert-item">Generative AI Mastermind</div>
+                </section>
+
+                <!-- Download Button -->
+                <a href="Gautam SEO Resume.pdf" class="download-btn" download>
+                    📄 Download Resume
+                </a>
+            </div>
+        </aside>
     </div>
 
     <script>
