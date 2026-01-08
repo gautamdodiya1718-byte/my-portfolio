@@ -19,13 +19,13 @@
         }
 
         body.light-mode {
-            background: linear-gradient(135deg, #f8fafc 0%, #ffffff 50%, #eff6ff 100%);
-            color: #1e293b;
+            background: #FAFAF8;
+            color: #1F2933;
         }
 
         body.dark-mode {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
-            color: #e2e8f0;
+            background: #181715;
+            color: #F2F2EF;
         }
 
         /* Dark Mode Toggle */
@@ -34,11 +34,11 @@
             top: 24px;
             right: 24px;
             z-index: 1000;
-            width: 56px;
-            height: 56px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             border: none;
-            font-size: 24px;
+            font-size: 18px;
             cursor: pointer;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             transition: all 0.3s;
@@ -49,12 +49,13 @@
         }
 
         .light-mode .dark-toggle {
-            background: white;
-            border: 1px solid #e2e8f0;
+            background: #FFFFFF;
+            border: 1px solid #EDEAE5;
         }
 
         .dark-mode .dark-toggle {
-            background: #334155;
+            background: #1F1E1B;
+            border: 1px solid #2C2A26;
         }
 
         /* Back Button */
@@ -63,33 +64,37 @@
             top: 24px;
             left: 24px;
             z-index: 1000;
-            padding: 12px 24px;
+            padding: 8px 14px;
             border-radius: 8px;
             text-decoration: none;
             font-weight: 500;
+            font-size: 13px;
             transition: all 0.3s;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 4px;
         }
 
         .light-mode .back-btn {
-            background: white;
-            color: #334155;
-            border: 1px solid #e2e8f0;
+            background: #FFFFFF;
+            color: #1F2933;
+            border: 1px solid #EDEAE5;
         }
 
         .light-mode .back-btn:hover {
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-color: #A18D6D;
         }
 
         .dark-mode .back-btn {
-            background: #334155;
-            color: #e2e8f0;
+            background: #1F1E1B;
+            color: #F2F2EF;
+            border: 1px solid #2C2A26;
         }
 
         .dark-mode .back-btn:hover {
-            background: #475569;
+            background: #262420;
+            border-color: #B6A98A;
         }
 
         /* Container */
@@ -115,13 +120,13 @@
         }
 
         .light-mode .sidebar-nav {
-            background: rgba(255, 255, 255, 0.8);
-            border-color: #e2e8f0;
+            background: rgba(255, 255, 255, 0.9);
+            border-color: #EDEAE5;
         }
 
         .dark-mode .sidebar-nav {
-            background: rgba(30, 41, 59, 0.8);
-            border-color: #334155;
+            background: rgba(31, 30, 27, 0.9);
+            border-color: #2C2A26;
         }
 
         @media (min-width: 1024px) {
@@ -130,7 +135,39 @@
                 top: 0;
                 height: 100vh;
                 overflow-y: auto;
+                padding: 32px 24px;
             }
+        }
+
+        .btn-secondary {
+            padding: 12px 24px;
+            border: 2px solid;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .light-mode .btn-secondary {
+            border-color: #FFFFFF;
+            color: #FFFFFF;
+            background: #1F2933;
+        }
+
+        .light-mode .btn-secondary:hover {
+            background: #FFFFFF;
+            color: #1F2933;
+        }
+
+        .dark-mode .btn-secondary {
+            border-color: #FFFFFF;
+            color: #FFFFFF;
+            background: transparent;
+        }
+
+        .dark-mode .btn-secondary:hover {
+            background: #FFFFFF;
+            color: #1F2933;
         }
 
         .nav-title {
@@ -142,11 +179,11 @@
         }
 
         .light-mode .nav-title {
-            color: #64748b;
+            color: #6B7280;
         }
 
         .dark-mode .nav-title {
-            color: #94a3b8;
+            color: #B6B2AA;
         }
 
         .nav-list {
@@ -169,23 +206,23 @@
         }
 
         .light-mode .nav-link {
-            color: #475569;
+            color: #6B7280;
         }
 
         .light-mode .nav-link:hover,
         .light-mode .nav-link.active {
-            background: #f1f5f9;
-            color: #3b82f6;
+            background: #F4F1EB;
+            color: #703B3B;
         }
 
         .dark-mode .nav-link {
-            color: #cbd5e1;
+            color: #B6B2AA;
         }
 
         .dark-mode .nav-link:hover,
         .dark-mode .nav-link.active {
-            background: #334155;
-            color: #60a5fa;
+            background: #262420;
+            color: #B6A98A;
         }
 
         /* Main Content */
@@ -216,11 +253,11 @@
         }
 
         .light-mode .page-header p {
-            color: #64748b;
+            color: #6B7280;
         }
 
         .dark-mode .page-header p {
-            color: #cbd5e1;
+            color: #B6B2AA;
         }
 
         /* Skill Section */
@@ -239,11 +276,11 @@
         }
 
         .light-mode .skill-header {
-            border-color: #e2e8f0;
+            border-color: #EDEAE5;
         }
 
         .dark-mode .skill-header {
-            border-color: #334155;
+            border-color: #2C2A26;
         }
 
         .skill-icon-large {
@@ -257,11 +294,11 @@
         }
 
         .light-mode .skill-icon-large {
-            background: linear-gradient(135deg, #dbeafe 0%, #e0e7ff 100%);
+            background: #F4F1EB;
         }
 
         .dark-mode .skill-icon-large {
-            background: linear-gradient(135deg, rgba(30, 58, 138, 0.5) 0%, rgba(49, 46, 129, 0.5) 100%);
+            background: #262420;
         }
 
         .skill-header-text h2 {
@@ -279,13 +316,13 @@
         }
 
         .light-mode .skill-level-badge {
-            background: #dbeafe;
-            color: #1e40af;
+            background: #F4F1EB;
+            color: #703B3B;
         }
 
         .dark-mode .skill-level-badge {
-            background: rgba(30, 64, 175, 0.5);
-            color: #93c5fd;
+            background: #262420;
+            color: #B6A98A;
         }
 
         .skill-description {
@@ -295,11 +332,11 @@
         }
 
         .light-mode .skill-description {
-            color: #475569;
+            color: #6B7280;
         }
 
         .dark-mode .skill-description {
-            color: #cbd5e1;
+            color: #B6B2AA;
         }
 
         .work-section {
@@ -332,24 +369,24 @@
         }
 
         .light-mode .work-card {
-            background: white;
-            border-color: #e2e8f0;
+            background: #FFFFFF;
+            border-color: #EDEAE5;
         }
 
         .light-mode .work-card:hover {
-            border-color: #93c5fd;
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            border-color: #A18D6D;
+            box-shadow: 0 10px 15px rgba(161, 141, 109, 0.15);
             transform: translateY(-2px);
         }
 
         .dark-mode .work-card {
-            background: rgba(30, 41, 59, 0.5);
-            border-color: #334155;
+            background: #1F1E1B;
+            border-color: #2C2A26;
         }
 
         .dark-mode .work-card:hover {
-            border-color: #3b82f6;
-            box-shadow: 0 10px 15px rgba(59, 130, 246, 0.2);
+            border-color: #B6A98A;
+            box-shadow: 0 10px 15px rgba(182, 169, 138, 0.2);
             transform: translateY(-2px);
         }
 
@@ -360,11 +397,11 @@
         }
 
         .light-mode .work-card h4 {
-            color: #1e293b;
+            color: #1F2933;
         }
 
         .dark-mode .work-card h4 {
-            color: #f1f5f9;
+            color: #F2F2EF;
         }
 
         .work-card p {
@@ -374,11 +411,11 @@
         }
 
         .light-mode .work-card p {
-            color: #64748b;
+            color: #6B7280;
         }
 
         .dark-mode .work-card p {
-            color: #94a3b8;
+            color: #B6B2AA;
         }
 
         .work-metrics {
@@ -401,11 +438,11 @@
         }
 
         .light-mode .metric {
-            color: #3b82f6;
+            color: #A18D6D;
         }
 
         .dark-mode .metric {
-            color: #60a5fa;
+            color: #B6A98A;
         }
 
         .tools-list {
@@ -423,13 +460,13 @@
         }
 
         .light-mode .tool-tag {
-            background: #f1f5f9;
-            color: #475569;
+            background: #F4F1EB;
+            color: #703B3B;
         }
 
         .dark-mode .tool-tag {
-            background: rgba(51, 65, 85, 0.5);
-            color: #cbd5e1;
+            background: #262420;
+            color: #B6A98A;
         }
     </style>
 </head>
@@ -437,7 +474,7 @@
     <!-- Back Button -->
     <a href="index.html" class="back-btn">
         <span>←</span>
-        <span>Back to Portfolio</span>
+        <span>Back to Home</span>
     </a>
 
     <!-- Dark Mode Toggle -->
@@ -1076,7 +1113,15 @@
                             <div class="work-metrics">
                                 <span class="metric"><span class="metric-icon">🔍</span> Monitoring</span>
                                 <span class="metric"><span class="metric-icon">📊</span> Analytics</span>
-                                <script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
         // Dark Mode Toggle
         function toggleDarkMode() {
             const body = document.body;
@@ -1148,3 +1193,5 @@
             }
         });
     </script>
+</body>
+</html>
