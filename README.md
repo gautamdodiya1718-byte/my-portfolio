@@ -95,42 +95,84 @@ SEMrush, Ahrefs, Screaming Frog, WordPress, and specialized SEO tools
 ## 📁 Project Structure
 
 ```
-├── index.html          # Main portfolio landing page
-├── skill.html          # Detailed skills & work portfolio
-├── mepassport.png      # Portfolio image
-├── README.md           # This file
-└── Gautam-Dodiya-Resume.pdf  # Resume download
+├── index.html                    # Main portfolio landing page
+├── skill.html                    # Detailed skills & work portfolio
+├── mepassport.png                # Portfolio image
+├── README.md                     # This file
+└── Gautam-Dodiya-Resume.pdf      # Resume download
 ```
 
 ## 🌐 Features
 
-- ✨ Responsive design for all devices
-- 🌓 Dark/Light mode toggle
-- 🎨 Modern, professional UI
-- 📱 Mobile-friendly navigation
+- ✨ Responsive design for all devices (mobile, tablet, desktop)
+- 🌓 Dark/Light mode toggle with persistent theme switching
+- 🎨 Modern, professional UI with olive-brown accent color scheme
+- 📱 Mobile-first navigation with sticky sidebar on desktop
 - ⚡ Smooth page transitions and scroll animations
-- 🔍 SEO-optimized content
-- 📊 Skills showcase with detailed work examples
+- 🔍 SEO-optimized content and metadata
+- 📊 Skills showcase with detailed work examples and metrics
+- 🎯 Call-to-action buttons with hover effects
+- 📍 Sticky sidebar for better navigation on desktop view
+
+## 🎨 Design System
+
+### Color Palette
+
+**Light Mode:**
+- Background: `#FAFAF8` (Soft beige)
+- Cards/Sections: `#FFFFFF` (Pure white)
+- Primary Text: `#1F2933` (Dark gray)
+- Secondary Text: `#6B7280` (Medium gray)
+- Primary Accent: `#A18D6D` (Olive-brown)
+- Soft Accent: `#F4F1EB` (Very light beige)
+- Borders: `#EDEAE5` (Light gray)
+- Strong Accent: `#703B3B` (Wine brown - rare use)
+
+**Dark Mode:**
+- Background: `#181715` (Soft dark)
+- Cards/Sections: `#1F1E1B` (Dark gray)
+- Primary Text: `#F2F2EF` (Off-white)
+- Secondary Text: `#B6B2AA` (Light gray)
+- Primary Accent: `#B6A98A` (Light olive-brown)
+- Soft Accent: `#262420` (Dark taupe)
+- Borders: `#2C2A26` (Dark gray)
+- Strong Accent: `#703B3B` (Wine brown - rare use)
+
+### Typography
+- Font Family: System fonts (-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif)
+- Responsive sizing for all screen sizes
+- Clear hierarchy with headings, body, and secondary text
 
 ## 🚀 How to View
 
 1. **Online:** Visit the live portfolio (when deployed)
 2. **Local:** Open `index.html` in your browser
-3. **Skills Detail:** Navigate to `skill.html` for in-depth skill documentation
+3. **Skills Detail:** Click "Skills & Work" or navigate to `skill.html` for in-depth skill documentation
+4. **Dark Mode:** Toggle between light and dark themes using the moon/sun icon in the top-right corner
 
 ## 📖 Navigation
 
 - **Home/Main Page:** `index.html` - Overview, hero section, and core skills
 - **Skills & Work:** `skill.html` - Detailed breakdown of each skill with real project examples
-- **Resume:** Download PDF from the portfolio
+- **Resume:** Download PDF from the portfolio sidebar
+- **Back Navigation:** Use the "← Back to Home" button on skill.html to return to the main page
 
 ## 🎨 Design Highlights
 
-- Clean, modern aesthetic with gradient accents
-- Dual-theme support (light & dark modes)
-- Interactive skill cards with hover effects
-- Smooth scrolling navigation
-- Professional typography and color scheme
+- Clean, modern aesthetic with olive-brown accent color
+- Dual-theme support (light & dark modes) with soft, low-contrast design
+- Interactive skill cards with smooth hover effects and animations
+- Responsive grid layouts for skills and work examples
+- Sticky sidebar navigation on desktop for easy access
+- Professional typography with clear visual hierarchy
+- Smooth page transitions and button interactions
+
+## 🔧 Technical Stack
+
+- **HTML5** - Semantic markup
+- **CSS3** - Modern styling with flexbox and grid layouts
+- **Vanilla JavaScript** - Dark mode toggle and interactivity
+- **Responsive Design** - Mobile-first approach with media queries
 
 ## 📧 Get In Touch
 
@@ -147,3 +189,4 @@ This portfolio is personal work and is not open-source. All content is proprieta
 ---
 
 **Last Updated:** January 2026
+**Version:** 2.0 (Redesigned with new color system and improved UX)
