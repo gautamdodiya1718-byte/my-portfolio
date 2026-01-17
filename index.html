@@ -12,6 +12,16 @@
             box-sizing: border-box;
         }
 
+        /* Reused color variables derived from existing palette (no new colors introduced) */
+        :root {
+            --bg-light: #FAFAFA; /* existing */
+            --text-dark: #1F1F1F; /* existing */
+            --accent-green: #6B7F5A; /* existing */
+            --accent-blue: #3b82f6; /* existing */
+            --muted: #6B7280; /* existing tone used */
+            --gold: #A18D6D; /* existing */
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
@@ -20,22 +30,22 @@
 
         /* Light Mode */
         body.light-mode {
-            background: #FAFAF8;
-            color: #1F2933;
+            background: #FAFAFA;
+            color: #1F1F1F;
         }
 
         /* Dark Mode */
         body.dark-mode {
-            background: #181715;
-            color: #F2F2EF;
+            background: #0F1210;
+            color: #EDEDED;
         }
 
-        /* Dark Mode Toggle */
+        /* Dark Mode Toggle - visible during intro and portfolio, hidden during transition, responsive */
         .dark-toggle {
             position: fixed;
             top: 24px;
             right: 24px;
-            z-index: 1000;
+            z-index: 2500; /* above intro overlay (2200) */
             width: 40px;
             height: 40px;
             border-radius: 50%;
@@ -52,12 +62,22 @@
 
         .light-mode .dark-toggle {
             background: #FFFFFF;
-            border: 1px solid #EDEAE5;
+            border: 1px solid #E0E0E0;
         }
 
         .dark-mode .dark-toggle {
-            background: #1F1E1B;
-            border: 1px solid #2C2A26;
+            background: #161A17;
+            border: 1px solid #2A2F2B;
+        }
+
+        @media (max-width: 768px) {
+            .dark-toggle {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+                top: 16px;
+                right: 16px;
+            }
         }
 
         /* Main Container */
@@ -65,6 +85,7 @@
             display: flex;
             flex-direction: column;
             min-height: auto;
+            transition: opacity 560ms cubic-bezier(.2,.9,.2,1), transform 560ms cubic-bezier(.2,.9,.2,1);
         }
 
         @media (min-width: 1024px) {
@@ -139,11 +160,11 @@
         }
 
         .light-mode .section-title {
-            color: #6B7280;
+            color: #8A8A8A;
         }
 
         .dark-mode .section-title {
-            color: #B6B2AA;
+            color: #B0B5B1;
         }
 
         .education-item {
@@ -153,11 +174,11 @@
         }
 
         .education-item:first-child {
-            border-color: #A18D6D;
+            border-color: #6B7F5A;
         }
 
         .education-item:last-child {
-            border-color: #A18D6D;
+            border-color: #6B7F5A;
         }
 
         .cert-item {
@@ -170,7 +191,7 @@
 
         .cert-item::before {
             content: '✓';
-            color: #A18D6D;
+            color: #6B7F5A;
             margin-top: 2px;
         }
 
@@ -179,7 +200,7 @@
             width: 100%;
             text-align: center;
             padding: 12px 16px;
-            background: #A18D6D;
+            background: #6B7F5A;
             color: #FFFFFF;
             border-radius: 8px;
             text-decoration: none;
@@ -190,7 +211,7 @@
 
         .download-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 15px rgba(161, 141, 109, 0.3);
+            box-shadow: 0 10px 15px rgba(107, 127, 90, 0.3);
         }
 
         /* Main Content */
@@ -271,6 +292,10 @@
             margin-bottom: 16px;
         }
 
+        .hero h1:focus {
+            outline: none;
+        }
+
         .hero h2 {
             font-size: 24px;
             font-weight: 600;
@@ -307,11 +332,11 @@
         }
 
         .light-mode .social-label {
-            color: #6B7280;
+            color: #5F6368;
         }
 
         .dark-mode .social-label {
-            color: #B6B2AA;
+            color: #B0B5B1;
         }
 
         .social-btn {
@@ -328,24 +353,24 @@
 
         .light-mode .social-btn {
             background: #FFFFFF;
-            border: 1px solid #EDEAE5;
-            color: #1F2933;
+            border: 1px solid #E0E0E0;
+            color: #1F1F1F;
         }
 
         .light-mode .social-btn:hover {
-            border-color: #A18D6D;
+            border-color: #6B7F5A;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .dark-mode .social-btn {
-            background: #1F1E1B;
-            color: #F2F2EF;
-            border: 1px solid #2C2A26;
+            background: #161A17;
+            color: #EDEDED;
+            border: 1px solid #2A2F2B;
         }
 
         .dark-mode .social-btn:hover {
-            background: #262420;
-            border-color: #B6A98A;
+            background: #1D221E;
+            border-color: #9FB08C;
         }
 
         /* CTA Buttons */
@@ -357,7 +382,7 @@
 
         .btn-primary {
             padding: 12px 24px;
-            background: #A18D6D;
+            background: #F2994A;
             color: white;
             border-radius: 8px;
             text-decoration: none;
@@ -367,7 +392,7 @@
 
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 15px rgba(161, 141, 109, 0.3);
+            box-shadow: 0 10px 15px rgba(242, 153, 74, 0.3);
         }
 
         .btn-secondary {
@@ -380,13 +405,13 @@
         }
 
         .light-mode .btn-secondary {
-            border-color: #1F2933;
-            color: #1F2933;
+            border-color: #1F1F1F;
+            color: #1F1F1F;
             background: transparent;
         }
 
         .light-mode .btn-secondary:hover {
-            background: #1F2933;
+            background: #1F1F1F;
             color: #FFFFFF;
         }
 
@@ -413,12 +438,12 @@
 
         .light-mode .experience-section {
             background: #FFFFFF;
-            border-color: #EDEAE5;
+            border-color: #E0E0E0;
         }
 
         .dark-mode .experience-section {
-            background: #1F1E1B;
-            border-color: #2C2A26;
+            background: #161A17;
+            border-color: #2A2F2B;
         }
 
         .experience-item {
@@ -432,11 +457,11 @@
         }
 
         .light-mode .experience-item:hover {
-            background: #FAFAF8;
+            background: #F4F6F8;
         }
 
         .dark-mode .experience-item:hover {
-            background: #262420;
+            background: #1D221E;
         }
 
         .status-dot {
@@ -448,15 +473,15 @@
         }
 
         .status-dot.active {
-            background: #A18D6D;
+            background: #6B7F5A;
         }
 
         .light-mode .status-dot.inactive {
-            background: #EDEAE5;
+            background: #E0E0E0;
         }
 
         .dark-mode .status-dot.inactive {
-            background: #2C2A26;
+            background: #2A2F2B;
         }
 
         /* Skills Grid */
@@ -505,23 +530,23 @@
 
         .light-mode .skill-card {
             background: #FFFFFF;
-            border-color: #EDEAE5;
+            border-color: #E0E0E0;
         }
 
         .light-mode .skill-card:hover {
-            border-color: #A18D6D;
-            box-shadow: 0 10px 15px rgba(161, 141, 109, 0.15);
+            border-color: #6B7F5A;
+            box-shadow: 0 10px 15px rgba(107, 127, 90, 0.15);
             transform: translateY(-4px);
         }
 
         .dark-mode .skill-card {
-            background: #1F1E1B;
-            border-color: #2C2A26;
+            background: #161A17;
+            border-color: #2A2F2B;
         }
 
         .dark-mode .skill-card:hover {
-            border-color: #B6A98A;
-            box-shadow: 0 10px 15px rgba(182, 169, 138, 0.2);
+            border-color: #9FB08C;
+            box-shadow: 0 10px 15px rgba(159, 176, 140, 0.2);
             transform: translateY(-4px);
         }
 
@@ -548,11 +573,11 @@
         }
 
         .light-mode .skill-icon {
-            background: #F4F1EB;
+            background: #F4F6F8;
         }
 
         .dark-mode .skill-icon {
-            background: #262420;
+            background: #1D221E;
         }
 
         .skill-level {
@@ -562,13 +587,13 @@
         }
 
         .light-mode .skill-level {
-            background: #F4F1EB;
-            color: #703B3B;
+            background: #F4F6F8;
+            color: #6B7F5A;
         }
 
         .dark-mode .skill-level {
-            background: #262420;
-            color: #B6A98A;
+            background: #1D221E;
+            color: #9FB08C;
         }
 
         .skill-title {
@@ -579,7 +604,7 @@
         }
 
         .skill-card:hover .skill-title {
-            color: #A18D6D;
+            color: #6B7F5A;
         }
 
         .skill-description {
@@ -589,11 +614,11 @@
         }
 
         .light-mode .skill-description {
-            color: #6B7280;
+            color: #5F6368;
         }
 
         .dark-mode .skill-description {
-            color: #B6B2AA;
+            color: #B0B2AA;
         }
 
         .skill-tags {
@@ -609,13 +634,13 @@
         }
 
         .light-mode .skill-tag {
-            background: #F4F1EB;
-            color: #703B3B;
+            background: #F4F6F8;
+            color: #6B7F5A;
         }
 
         .dark-mode .skill-tag {
-            background: #262420;
-            color: #B6A98A;
+            background: #1D221E;
+            color: #9FB08C;
         }
 
         /* Footer CTA */
@@ -637,13 +662,13 @@
         }
 
         .light-mode .footer-cta {
-            background: #1F2933;
-            border-color: #EDEAE5;
+            background: #1F1F1F;
+            border-color: #E0E0E0;
         }
 
         .dark-mode .footer-cta {
-            background: #1F1E1B;
-            border-color: #2C2A26;
+            background: #0F1210;
+            border-color: #2A2F2B;
         }
 
         .footer-cta h3 {
@@ -654,7 +679,7 @@
         }
 
         .footer-cta p {
-            color: #B6B2AA;
+            color: #B0B5B1;
             margin-bottom: 32px;
             max-width: 42rem;
             margin-left: auto;
@@ -671,7 +696,7 @@
         .footer-btn-primary {
             padding: 16px 32px;
             background: #FFFFFF;
-            color: #1F2933;
+            color: #1F1F1F;
             border-radius: 8px;
             text-decoration: none;
             font-weight: 500;
@@ -697,15 +722,244 @@
             background: white;
             color: #1F2933;
         }
+        
+        /* ---------------- Refined Intro Overlay Styles (Medium-Large Hero Size, Fully Visible) ---------------- */
+        /* Full-screen cinematic intro overlay using site's palette */
+        #intro-overlay {
+            position: fixed;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,255,255,0.96));
+            color: var(--text-dark);
+            z-index: 2200; /* sits safely above UI */
+            -webkit-backdrop-filter: blur(6px);
+            backdrop-filter: blur(6px);
+            pointer-events: auto;
+        }
+
+        /* Dark-mode variant for overlay (keeps branding consistent in dark mode) */
+        body.dark-mode #intro-overlay {
+            background: linear-gradient(180deg, rgba(15,18,16,0.98), rgba(15,18,16,0.96));
+            color: #EDEDED;
+        }
+
+        /* Card centered, spacious, cinematic - reduced to medium-large hero size, fully visible */
+        #intro-card {
+            text-align: center;
+            max-width: 900px;
+            width: calc(100% - 48px);
+            padding: 40px 40px;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+            transform-origin: center;
+            will-change: transform, opacity;
+        }
+
+        /* Name - dominant, bold, cinematic, reduced size for visibility */
+        #intro-name {
+            font-size: clamp(32px, 6vw, 72px);
+            font-weight: 900;
+            letter-spacing: -0.02em;
+            opacity: 0;
+            transform: scale(0.94) translateY(8px);
+            animation: nameIn 700ms cubic-bezier(.2,.9,.2,1) forwards;
+            line-height: 0.95;
+        }
+
+        @keyframes nameIn {
+            to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+
+        /* Passport photo - reduced size for visibility */
+        #intro-photo {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            opacity: 0;
+            border: 4px solid rgba(107,127,90,0.12);
+            box-shadow: 0 16px 40px rgba(107,127,90,0.08);
+            transform: translateY(12px) scale(0.98);
+            animation: photoIn 700ms 320ms cubic-bezier(.2,.9,.2,1) forwards;
+        }
+
+        @keyframes photoIn {
+            to { opacity: 1; transform: translateY(0) scale(1); border-color: rgba(107,127,90,0.26); box-shadow: 0 24px 60px rgba(107,127,90,0.18); }
+        }
+
+        /* Message - cinematic spacing and reduced size */
+        #intro-message {
+            font-size: clamp(14px, 2.2vw, 20px);
+            line-height: 1.4;
+            max-width: 800px;
+            color: inherit;
+            min-height: 4em; /* reserve space for 3 lines */
+            opacity: 0;
+            animation: msgFade 240ms 960ms ease forwards;
+            letter-spacing: -0.01em;
+        }
+
+        @keyframes msgFade { to { opacity: 1; } }
+
+        .typed-line {
+            display: block;
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 2px solid transparent;
+            font-weight: 500;
+        }
+
+        /* CTA button - prominent, uses existing accent color, reduced size */
+        #intro-cta {
+            margin-top: 8px;
+            padding: 12px 24px;
+            font-size: clamp(14px, 1.8vw, 18px);
+            font-weight: 700;
+            color: #FFFFFF;
+            background: var(--accent-green);
+            border: 0;
+            border-radius: 12px;
+            cursor: pointer;
+            box-shadow: 0 12px 30px rgba(107,127,90,0.18);
+            transition: transform 220ms ease, box-shadow 220ms ease, opacity 220ms ease;
+            outline: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            will-change: transform, box-shadow;
+        }
+
+        /* Idle subtle pulse (inviting) - reuses accent color */
+        @keyframes ctaPulse {
+            0% { box-shadow: 0 12px 30px rgba(107,127,90,0.18); transform: translateY(0); }
+            50% { box-shadow: 0 18px 45px rgba(107,127,90,0.26); transform: translateY(-2px); }
+            100% { box-shadow: 0 12px 30px rgba(107,127,90,0.18); transform: translateY(0); }
+        }
+        /* apply subtle pulse but keep it calm */
+        #intro-cta.pulse {
+            animation: ctaPulse 2000ms ease-in-out infinite;
+        }
+
+        #intro-cta:hover {
+            transform: translateY(-3px) scale(1.02);
+        }
+
+        /* CTA press feedback */
+        #intro-cta:active {
+            transform: scale(0.98);
+            box-shadow: 0 8px 20px rgba(107,127,90,0.3);
+        }
+
+        /* White flash overlay for micro reset */
+        #white-flash {
+            position: fixed;
+            inset: 0;
+            background: var(--bg-light); /* reused from palette */
+            z-index: 2300;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 300ms ease;
+        }
+        body.dark-mode #white-flash {
+            background: #0F1210; /* harmonize with dark mode */
+        }
+
+        /* Scattered SEO signals with organic motion */
+        #seo-signals {
+            position: fixed;
+            inset: 0;
+            z-index: 2400;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        .seo-word {
+            position: absolute;
+            font-size: clamp(16px, 2.5vw, 24px);
+            font-weight: 600;
+            color: var(--text-dark);
+            opacity: 0;
+            will-change: transform, opacity;
+            animation: drift 8s ease-in-out infinite alternate;
+        }
+        body.dark-mode .seo-word {
+            color: #EDEDED;
+        }
+        @keyframes drift {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(10px, -5px) rotate(1deg); }
+            50% { transform: translate(-5px, 10px) rotate(-0.5deg); }
+            75% { transform: translate(15px, 5px) rotate(0.8deg); }
+            100% { transform: translate(0, 0) rotate(0deg); }
+        }
+
+        /* Gravity pull animation */
+        .pull-to-center {
+            animation: pullCenter 1.2s cubic-bezier(.2,.9,.2,1) forwards;
+        }
+        @keyframes pullCenter {
+            to { transform: translate(var(--center-x), var(--center-y)) scale(0.3); opacity: 0; filter: blur(2px); }
+        }
+
+        /* Portfolio reveal with depth */
+        .portfolio-reveal {
+            animation: revealIn 800ms cubic-bezier(.2,.9,.2,1) forwards;
+        }
+        @keyframes revealIn {
+            0% { opacity: 0; transform: scale(1.05) translateY(5px); filter: blur(3px); }
+            100% { opacity: 1; transform: scale(1) translateY(0); filter: blur(0); }
+        }
+
+        /* Responsive tweaks - ensure full visibility */
+        @media (max-width: 480px) {
+            #intro-photo { width: 100px; height: 100px; }
+            #intro-name { font-size: 32px; }
+            #intro-card { padding: 24px 20px; gap: 16px; }
+            #intro-message { font-size: 14px; }
+            #intro-cta { padding: 10px 20px; font-size: 14px; }
+        }
     </style>
 </head>
 <body class="light-mode">
-    <!-- Dark Mode Toggle -->
+    <!-- Intro overlay (top of body). Uses existing image file to avoid renaming. -->
+    <div id="intro-overlay" role="dialog" aria-hidden="false" aria-label="Intro: Gautam Dodiya">
+        <div id="intro-card" aria-hidden="false">
+            <!-- Full name appears first (dominant) -->
+            <div id="intro-name">Gautam Dodiya</div>
+
+            <!-- Passport-size circular photo with subtle animated border/glow -->
+            <img id="intro-photo" src="mepassport.png" alt="Gautam Dodiya">
+
+            <!-- Message lines revealed with typing-style animation -->
+            <div id="intro-message" aria-live="polite" aria-atomic="true">
+                <span class="typed-line" data-text="I don’t chase traffic."></span>
+                <span class="typed-line" data-text="I build visibility that turns into revenue."></span>
+                <span class="typed-line" data-text="If you’re here, growth already matters."></span>
+            </div>
+
+            <!-- Prominent CTA - visitor consciously enters portfolio -->
+            <button id="intro-cta" class="pulse" aria-label="Enter portfolio - Let's SEO">Let’s SEO</button>
+        </div>
+    </div>
+
+    <!-- White flash overlay for micro reset -->
+    <div id="white-flash"></div>
+
+    <!-- Scattered SEO signals container -->
+    <div id="seo-signals"></div>
+
+    <!-- Dark Mode Toggle - visible during intro and portfolio, hidden during transition -->
     <button class="dark-toggle" onclick="toggleDarkMode()" aria-label="Toggle dark mode">
         <span id="darkModeIcon">🌙</span>
     </button>
 
-    <div class="container">
+    <div class="container" id="site-container" aria-hidden="false">
         <!-- Main Content -->
         <section class="main-content">
             <!-- Hero Section -->
@@ -832,7 +1086,7 @@
                     </a>
 
                     <!-- Skill 4 -->
-                    <a href="skill.html#keyword-research" class="skill-card" style="text-decoration: none; color: inherit; cursor: pointer;">
+                    <a href="skill.html#keyword-research" class="skill-card" style="text-decoration: none; cursor: pointer;">
                         <div class="skill-header">
                             <div class="skill-icon">🔍</div>
                             <div class="skill-level">Expert</div>
@@ -975,49 +1229,168 @@
     </div>
 
     <script>
-        // Dark Mode Toggle
-        function toggleDarkMode() {
-            const body = document.body;
-            const icon = document.getElementById('darkModeIcon');
-            
-            if (body.classList.contains('light-mode')) {
-                body.classList.remove('light-mode');
-                body.classList.add('dark-mode');
-                icon.textContent = '☀️';
-                localStorage.setItem('theme', 'dark');
-            } else {
-                body.classList.remove('dark-mode');
-                body.classList.add('light-mode');
-                icon.textContent = '🌙';
-                localStorage.setItem('theme', 'light');
-            }
+        /* Refined Intro: multi-stage cinematic transition with organic motion and gravity pull
+           - Intro always plays on every load
+           - Stage 1: CTA feedback, intro prepares exit
+           - Stage 2: Micro white flash (0.4-0.6s)
+           - Stage 3: Scattered SEO signals with organic drifting motion
+           - Stage 4: Gravity pull to center
+           - Stage 5: Portfolio reveal with depth
+           - Locks scroll, hides portfolio completely during transition
+        */
+        (function(){
+            document.addEventListener('DOMContentLoaded', () => {
+                const overlay = document.getElementById('intro-overlay');
+                const card = document.getElementById('intro-card');
+                const cta = document.getElementById('intro-cta');
+                const body = document.body;
+                const site = document.getElementById('site-container');
+                const whiteFlash = document.getElementById('white-flash');
+                const seoSignals = document.getElementById('seo-signals');
+                const toggle = document.querySelector('.dark-toggle');
+                if (!overlay || !card || !cta || !site || !whiteFlash || !seoSignals || !toggle) return;
+
+                // Check localStorage for theme only (no introPlayed)
+                const savedTheme = localStorage.getItem('theme') || 'light';
+
+                // Apply saved theme
+                if (savedTheme === 'dark') {
+                    body.classList.remove('light-mode');
+                    body.classList.add('dark-mode');
+                    document.getElementById('darkModeIcon').textContent = '☀️';
+                } else {
+                    body.classList.remove('dark-mode');
+                    body.classList.add('light-mode');
+                    document.getElementById('darkModeIcon').textContent = '🌙';
+                }
+
+                // Always show intro on load
+
+                // lock scroll and hide portfolio completely
+                const prevOverflow = body.style.overflow || '';
+                body.style.overflow = 'hidden';
+                site.style.display = 'none'; // completely hide to prevent any flicker
+
+                // prepare typing lines
+                const lines = Array.from(overlay.querySelectorAll('.typed-line'));
+                lines.forEach(l => l.textContent = '');
+
+                function typeText(el,text,speed=28,cb){
+                    let i=0;
+                    el.style.borderRight = `2px solid var(--accent-green)`;
+                    const t = setInterval(()=>{ el.textContent = text.slice(0,++i); if(i>=text.length){ clearInterval(t); setTimeout(()=>{ el.style.borderRight='0'; cb && cb(); },260); } }, speed);
+                }
+
+                // sequential typing after name/photo animation
+                setTimeout(()=>{
+                    let idx=0;
+                    const next = ()=>{
+                        if(idx<lines.length){ typeText(lines[idx], lines[idx].dataset.text, 28, ()=>{ idx++; next(); }); }
+                    };
+                    next();
+                }, 920);
+
+                // CTA enter handler: new multi-stage transition
+                function enterPortfolio(){
+                    if(cta.disabled) return;
+                    cta.disabled = true;
+                    cta.classList.remove('pulse');
+
+                    // Hide toggle during transition for focus
+                    toggle.style.display = 'none';
+
+                    // Stage 1: CTA feedback and intro exit prep
+                    cta.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        overlay.style.display = 'none';
+
+                        // Stage 2: Micro white flash
+                        whiteFlash.style.opacity = '1';
+                        setTimeout(() => {
+                            whiteFlash.style.opacity = '0';
+
+                            // Stage 3: Scattered SEO signals with organic motion
+                            const words = ['Visibility', 'Trust', 'Growth', 'Rankings', 'Intent', 'Authority', 'Conversions', 'Revenue', 'Traffic', 'Engagement', 'Strategy', 'Optimization'];
+                            const centerX = window.innerWidth / 2;
+                            const centerY = window.innerHeight / 2;
+                            words.forEach((word, i) => {
+                                const el = document.createElement('div');
+                                el.className = 'seo-word';
+                                el.textContent = word;
+                                el.style.left = `${Math.random() * 80 + 10}%`; // scattered within 10-90%
+                                el.style.top = `${Math.random() * 60 + 20}%`; // scattered within 20-80%
+                                el.style.animationDelay = `${i * 0.1}s`; // stagger appearance
+                                seoSignals.appendChild(el);
+                                setTimeout(() => el.style.opacity = '1', i * 100);
+                            });
+
+                            // Let signals drift for ~2s
+                            setTimeout(() => {
+                                // Stage 4: Gravity pull to center
+                                const wordEls = seoSignals.querySelectorAll('.seo-word');
+                                wordEls.forEach(el => {
+                                    const rect = el.getBoundingClientRect();
+                                    const dx = centerX - (rect.left + rect.width / 2);
+                                    const dy = centerY - (rect.top + rect.height / 2);
+                                    el.style.setProperty('--center-x', `${dx}px`);
+                                    el.style.setProperty('--center-y', `${dy}px`);
+                                    el.classList.add('pull-to-center');
+                                });
+
+                                // After pull, Stage 5: Portfolio reveal
+                                setTimeout(() => {
+                                    seoSignals.style.display = 'none';
+                                    site.style.display = ''; // restore display
+                                    site.classList.add('portfolio-reveal');
+                                    site.style.transition = 'opacity 800ms cubic-bezier(.2,.9,.2,1), transform 800ms cubic-bezier(.2,.9,.2,1), filter 800ms cubic-bezier(.2,.9,.2,1)';
+                                    requestAnimationFrame(() => {
+                                        site.style.opacity = '1';
+                                        site.style.transform = 'scale(1) translateY(0)';
+                                        site.style.filter = 'blur(0)';
+                                    });
+
+                                    // Final cleanup
+                                    setTimeout(() => {
+                                        whiteFlash.remove();
+                                        seoSignals.remove();
+                                        body.style.overflow = prevOverflow;
+                                        site.removeAttribute('aria-hidden');
+                                        site.classList.remove('portfolio-reveal');
+                                        // Show toggle again
+                                        toggle.style.display = '';
+                                        // Focus main heading
+                                        const focusTarget = document.querySelector('.hero h1');
+                                        if (focusTarget) {
+                                            focusTarget.setAttribute('tabindex', '-1');
+                                            focusTarget.focus();
+                                        }
+                                    }, 1000);
+                                }, 1200); // pull duration
+                            }, 2000); // drift duration
+                        }, 500); // white flash duration
+                    }, 200); // CTA feedback duration
+                }
+
+                cta.addEventListener('click', enterPortfolio);
+                cta.addEventListener('keydown', (e)=>{ if(e.key==='Enter' || e.key===' ') { e.preventDefault(); enterPortfolio(); } });
+
+                // Accessibility: allow Esc to trigger transition
+                document.addEventListener('keydown', (e)=>{ if(e.key==='Escape'){ enterPortfolio(); } });
+
+                // Focus CTA for immediate interaction
+                cta.focus();
+            });
+        })();
+
+        /* Dark Mode Toggle - visible during intro and portfolio, hidden during transition */
+        function toggleDarkMode(){
+            const body=document.body, icon=document.getElementById('darkModeIcon');
+            if(body.classList.contains('light-mode')){ body.classList.remove('light-mode'); body.classList.add('dark-mode'); icon.textContent='☀️'; localStorage.setItem('theme','dark'); }
+            else{ body.classList.remove('dark-mode'); body.classList.add('light-mode'); icon.textContent='🌙'; localStorage.setItem('theme','light'); }
         }
 
-        // Load saved theme preference
-        window.addEventListener('DOMContentLoaded', () => {
-            const savedTheme = localStorage.getItem('theme');
-            const icon = document.getElementById('darkModeIcon');
-            
-            if (savedTheme === 'dark') {
-                document.body.classList.remove('light-mode');
-                document.body.classList.add('dark-mode');
-                icon.textContent = '☀️';
-            }
-        });
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
+        /* Smooth anchor scrolling (unchanged) */
+        document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',function(e){ e.preventDefault(); const t=document.querySelector(this.getAttribute('href')); if(t) t.scrollIntoView({behavior:'smooth',block:'start'}); }));
     </script>
 </body>
 </html>
