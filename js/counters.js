@@ -1,0 +1,1 @@
+document.querySelectorAll('.metric[data-target]').forEach(el=>{const t=Number(el.dataset.target);let v=0;const step=t/60;const i=setInterval(()=>{v+=step;if(v>=t){v=t;clearInterval(i)}el.textContent=t>999999?(v/1e6).toFixed(1)+'M':t>9999?(v/1000).toFixed(1)+'K':Math.round(v)+'+'},20)});
