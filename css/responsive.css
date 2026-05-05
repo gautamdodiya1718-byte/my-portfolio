@@ -1,0 +1,9 @@
+@media (max-width: 1024px) { .project-grid {grid-template-columns: repeat(2,1fr);} }
+@media (max-width: 768px) {
+  .desktop-nav { display: none; }
+  .hamburger { display: block; }
+  .hero-grid,.service-grid,.case-study-card,.project-grid,.two-col { grid-template-columns: 1fr; }
+  .process-row { flex-direction: column; gap: 24px; }
+  .process-connector { display: none; }
+}
+@media (max-width: 480px) { .section { padding: 72px 0; } }
