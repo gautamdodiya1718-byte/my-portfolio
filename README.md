@@ -1,51 +1,33 @@
-# Gautam Dodiya Portfolio
+# SEO Portfolio — GitHub Pages Deploy
 
-Static portfolio site (HTML/CSS/JS).
+Target live URL:
 
-## Current issue: site not loading after merge
-If you see `DNS_PROBE_FINISHED_NXDOMAIN` for `gautamdodiya.com`, this is a **DNS/domain setup issue**, not a code or PR merge issue.
+`https://gautamdodiya1718-byte.github.io/seo-portfolio/`
 
-### Why this happens
-- GitHub Pages is deployed successfully.
-- But custom domain DNS is not pointing to GitHub Pages yet (or domain is not registered/active).
+## Important
+This repository should be named **`seo-portfolio`** on GitHub to get that exact URL path.
 
-## Immediate fix (get site online now)
-1. Open **GitHub → Settings → Pages**.
-2. Remove the custom domain temporarily.
-3. Save.
-4. Open the default Pages URL:
-   - `https://gautamdodiya1718-byte.github.io/my-portfolio/`
+## Why the previous setup failed
+A custom-domain `CNAME` redirects Pages traffic to a custom domain. For a project URL (`...github.io/seo-portfolio/`), remove `CNAME`.
 
-This confirms the site code is live.
+## Publish steps
+1. Create (or rename) the GitHub repo to: `seo-portfolio`
+2. Push this code to `main`:
+   ```bash
+   git remote add origin https://github.com/gautamdodiya1718-byte/seo-portfolio.git
+   git push -u origin main
+   ```
+3. Open **Settings → Pages** in the `seo-portfolio` repo.
+4. Set **Source = GitHub Actions**.
+5. Open **Actions** and confirm `Deploy static site to GitHub Pages` is green.
+6. Open live URL:
+   `https://gautamdodiya1718-byte.github.io/seo-portfolio/`
 
-## Then configure custom domain correctly
-For `gautamdodiya.com`:
+## If it still does not load
+- Wait 1–3 minutes after first successful deploy.
+- Hard refresh browser (`Ctrl/Cmd + Shift + R`).
+- Check repo is **Public**.
+- Confirm no custom domain is set in Pages.
 
-### DNS records at your domain provider
-- Add A records for apex (`@`) to GitHub Pages IPs:
-  - `185.199.108.153`
-  - `185.199.109.153`
-  - `185.199.110.153`
-  - `185.199.111.153`
-- Add CNAME record:
-  - Host: `www`
-  - Value: `gautamdodiya1718-byte.github.io`
-
-### GitHub Pages settings
-1. In **Settings → Pages**, set source to **GitHub Actions**.
-2. Add custom domain: `gautamdodiya.com`.
-3. Wait for DNS propagation (5 min to 24 hours).
-4. Enable **Enforce HTTPS**.
-
-## About `gautamdodiya.github.io`
-That exact root URL only works if:
-1. GitHub username is exactly `gautamdodiya`
-2. Repo name is exactly `gautamdodiya.github.io`
-
-With username `gautamdodiya1718-byte`, the default URL is:
-`https://gautamdodiya1718-byte.github.io/my-portfolio/`
-
-## Local preview
-```bash
-python3 -m http.server 8080
-```
+## Optional custom domain later
+If you later want `gautamdodiya.com`, add `CNAME` back and configure DNS.
