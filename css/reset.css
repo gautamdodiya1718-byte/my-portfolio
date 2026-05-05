@@ -1,1 +1,6 @@
-*{box-sizing:border-box}body,h1,h2,h3,p,ol{margin:0}a{text-decoration:none;color:inherit}img{max-width:100%}body{font-family:"DM Sans",sans-serif;color:var(--text);background:var(--bg)}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body, h1, h2, h3, p { margin: 0; }
+a { color: inherit; text-decoration: none; }
+img, svg { display: block; max-width: 100%; }
+body { font-family: var(--font-primary); color: var(--color-text-primary); background: var(--color-bg); padding-top: 60px; }

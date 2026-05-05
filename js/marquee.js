@@ -1,1 +1,6 @@
-const m=document.querySelector('.marquee');m?.addEventListener('mouseenter',()=>m.style.animationPlayState='paused');m?.addEventListener('mouseleave',()=>m.style.animationPlayState='running');
+const track = document.getElementById('marquee-track');
+if (track) {
+  track.innerHTML += track.innerHTML;
+  track.addEventListener('mouseenter', () => { track.style.animationPlayState = 'paused'; });
+  track.addEventListener('mouseleave', () => { track.style.animationPlayState = 'running'; });
+}

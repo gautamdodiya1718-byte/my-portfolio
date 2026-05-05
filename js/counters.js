@@ -1,1 +1,21 @@
-document.querySelectorAll('.metric[data-target]').forEach(el=>{const t=Number(el.dataset.target);let v=0;const step=t/60;const i=setInterval(()=>{v+=step;if(v>=t){v=t;clearInterval(i)}el.textContent=t>999999?(v/1e6).toFixed(1)+'M':t>9999?(v/1000).toFixed(1)+'K':Math.round(v)+'+'},20)});
+function formatMetric(value, suffix) {
+  if (suffix === 'M') return (value / 1000000).toFixed(1) + 'M';
+  if (suffix === 'K') return (value / 1000).toFixed(1) + 'K';
+  if (suffix === '+') return Math.round(value) + '+';
+  return Math.round(value).toString();
+}
+function animateCounter(el) {
+  const target = parseFloat(el.dataset.target || '0');
+  const suffix = el.dataset.suffix || '';
+  const duration = 1400;
+  const start = performance.now();
+  function update(now) {
+    const progress = Math.min((now - start) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const current = target * eased;
+    el.textContent = formatMetric(current, suffix);
+    if (progress < 1) requestAnimationFrame(update);
+  }
+  requestAnimationFrame(update);
+}
+document.querySelectorAll('.gsc-number').forEach(animateCounter);
