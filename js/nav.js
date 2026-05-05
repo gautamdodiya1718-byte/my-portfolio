@@ -1,0 +1,1 @@
+const h=document.querySelector('.site-header');const b=document.querySelector('.menu-toggle');const n=document.querySelector('#nav-links');addEventListener('scroll',()=>h.classList.toggle('scrolled',scrollY>12));b?.addEventListener('click',()=>n.classList.toggle('open'));
